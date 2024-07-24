@@ -10,21 +10,185 @@ body {
   max-width: 992px;
   margin: auto;
 }
-
 #es-garnier.es-garnier * {
   box-sizing: border-box;
 }
-
 #es-garnier.es-garnier img {
   display: block;
   max-width: 100%;
 }
-
 #es-garnier.es-garnier p {
   margin: 0;
   padding: 0;
 }
-
 #es-garnier.es-garnier sup {
   font-size: 0.6em;
+}
+#es-garnier.es-garnier .es-title {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 32px;
+  line-height: 1;
+  text-align: center;
+  text-wrap: balance;
+  padding-block: 32px;
+}
+#es-garnier.es-garnier .es-line {
+  height: 10px;
+  background-color: #FCC558;
+  position: relative;
+}
+@media (min-width: 576px) {
+  #es-garnier.es-garnier .es-line--3:after {
+    z-index: 1;
+  }
+}
+@media (min-width: 768px) {
+  #es-garnier.es-garnier .es-line--3:after {
+    right: -9%;
+  }
+}
+#es-garnier.es-garnier .es-gradient--green {
+  background-image: linear-gradient(90deg, #257738 11.29%, #7AF178 85.48%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: cover;
+}
+#es-garnier.es-garnier .es-kv {
+  margin-bottom: 70px;
+}
+#es-garnier.es-garnier .es-kv .es-line {
+  margin-block: 16px;
+}
+@media (min-width: 576px) {
+  #es-garnier.es-garnier .es-kv .es-line--1 {
+    transform: rotate(180deg);
+    height: 100%;
+    width: 15px;
+    margin-top: 0px;
+    position: absolute;
+  }
+}
+#es-garnier.es-garnier .es-kv__left {
+  position: relative;
+}
+#es-garnier.es-garnier .es-kv__left--title {
+  background-color: #28352B;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 800;
+  font-style: italic;
+  color: #FFFFFF;
+  text-align: center;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  margin: auto;
+  padding: 2px 4px;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 2px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 72%;
+  left: 50%;
+}
+#es-garnier.es-garnier .es-kv__left--title span {
+  font-size: 1.8em;
+}
+#es-garnier.es-garnier .es-kv__left--title sup {
+  margin-top: 8px;
+  margin-bottom: auto;
+}
+@media (min-width: 576px) {
+  #es-garnier.es-garnier .es-kv__left--title {
+    font-size: 25px;
+  }
+}
+#es-garnier.es-garnier .es-kv__left--photoCtn {
+  padding-left: 3%;
+}
+@media (min-width: 576px) {
+  #es-garnier.es-garnier .es-kv__left {
+    width: 70%;
+    margin-left: 32px;
+    margin-right: -48px;
+    z-index: 1;
+  }
+}
+#es-garnier.es-garnier .es-kv__right {
+  background-color: #FCC558;
+  background: url("../images/kv_bg_banana.png") center no-repeat;
+  background-size: contain;
+  margin: 20px;
+  position: relative;
+  aspect-ratio: 1/1;
+}
+@media (min-width: 576px) {
+  #es-garnier.es-garnier .es-kv__right {
+    width: 43%;
+  }
+}
+#es-garnier.es-garnier .es-kv__branding {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: -20px;
+}
+#es-garnier.es-garnier .es-kv__branding .es-kv__text {
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 45px;
+  color: #28352B;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-shadow: 4px 0px 0 #FFFFFF;
+}
+#es-garnier.es-garnier .es-kv__logoCtn {
+  width: 50%;
+  margin: auto;
+}
+#es-garnier.es-garnier .es-kv__logoCtn img {
+  margin: auto;
+}
+#es-garnier.es-garnier .es-kv__textCtn {
+  position: absolute;
+  top: 35%;
+  width: 100%;
+}
+#es-garnier.es-garnier .es-kv__textCtn .es-kv__text {
+  text-align: center;
+  color: #28352B;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  line-height: 1;
+}
+#es-garnier.es-garnier .es-kv__packshotCtn {
+  position: absolute;
+  top: 54%;
+  width: 80%;
+  max-width: 300px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+@media (min-width: 576px) {
+  #es-garnier.es-garnier .es-kv__packshotCtn {
+    bottom: -28%;
+  }
+}
+#es-garnier.es-garnier .es-kv__packshot {
+  transition: all 200ms ease-in-out;
+}
+#es-garnier.es-garnier .es-kv__packshot:hover {
+  scale: 1.05;
+}
+@media (min-width: 576px) {
+  #es-garnier.es-garnier .es-kv {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 20px;
+    margin-bottom: 48px;
+  }
 }/*# sourceMappingURL=style.css.map */

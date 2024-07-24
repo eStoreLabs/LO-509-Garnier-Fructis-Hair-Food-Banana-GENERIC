@@ -1,26 +1,249 @@
 html,
 body {
-  margin: 0;
-  padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
+$ff-main: "Montserrat", Tahoma, Verdana, sans-serif;
+$fw-base: 400;
+$fw-bold: 700;
+$fw-fat: 800;
+$color-white: #FFFFFF;
+$color-black: #28352B;
+$color-main: #FCC558; //banana orange
+$color-accent-1: #93C01F; //green
+$color-accent-2: #F0DB3B; //yellow
+$color-cta: #D5421D; //ugly red-brownish for buttons
+
+
+@mixin gradient-bg-text {
+    background-image: linear-gradient(90deg, #257738 11.29%, #7AF178 85.48%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
+}
+
+@mixin gradient-bg-orange {
+    background: linear-gradient(270deg, #FF7B2E 0%, #FFBD69 39.92%, #FF7B2E 60.29%, #FFBD69 81.47%, #FF7B2E 100%);
+
+}
+
+
+
 #es-garnier.es-garnier {
-  font-family: "Montserrat", Tahoma, Verdana, sans-serif;
-  overflow: hidden;
-  max-width: 992px;
-  margin: auto;
-}
-#es-garnier.es-garnier * {
-  box-sizing: border-box;
-}
-#es-garnier.es-garnier img {
-  display: block;
-  max-width: 100%;
-}
-#es-garnier.es-garnier p {
-  margin: 0;
-  padding: 0;
-}
-#es-garnier.es-garnier sup {
-  font-size: 0.6em;
+    * {
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    sup {
+        font-size: 0.6em;
+    }
+
+    font-family: $ff-main;
+    overflow: hidden;
+    max-width: 992px;
+    margin: auto;
+
+    .es-title {
+        text-transform: uppercase;
+        font-weight: 800;
+        font-style: italic;
+        font-size: 32px;
+        line-height: 1;
+        text-align: center;
+        text-wrap: balance;
+        padding-block: 32px;
+    }
+
+    .es-line {
+        height: 10px;
+        background-color: $color-main;
+        position: relative;
+
+        &--3 {
+            &:after {
+                @media (min-width: 576px) {
+                    z-index: 1;
+                }
+
+                @media (min-width: 768px) {
+                    right: -9%;
+                }
+            }
+        }
+    }
+
+    .es-gradient {
+        &--green {
+            @include gradient-bg-text();
+        }
+    }
+
+    .es-kv {
+        margin-bottom: 70px;
+        .es-line {
+            margin-block: 16px;
+
+
+
+            &--1 {
+                @media (min-width: 576px) {
+                    transform: rotate(180deg);
+                    height: 100%;
+                    width: 15px;
+                    margin-top: 0px;
+                    position: absolute;
+                }
+            }
+        }
+
+        &__left {
+            position: relative;
+
+            &--title {
+                background-color: $color-black;
+                text-transform: uppercase;
+                font-size: 20px;
+                font-weight: $fw-fat;
+                font-style: italic;
+                color: $color-white;
+                text-align: center;
+                max-width: max-content;
+                margin: auto;
+                padding: 2px 4px;
+                display: flex;
+                align-items: center;
+                white-space: nowrap;
+                gap: 2px;
+                position: absolute;
+                transform: translate(-50%, -50%);
+                top: 72%;
+                left: 50%;
+
+                span {
+                    font-size: 1.8em;
+                }
+
+                sup {
+                    margin-top: 8px;
+                    margin-bottom: auto;
+                }
+
+                @media (min-width: 576px) {
+                    font-size: 25px;
+                }
+            }
+
+            &--photoCtn {
+                padding-left: 3%;
+            }
+
+            @media (min-width: 576px) {
+                width: 70%;
+                margin-left: 32px;
+                margin-right: -48px;
+                z-index: 1;
+            }
+        }
+
+        &__right {
+            background-color: $color-main;
+            background: url("../images/kv_bg_banana.png") center no-repeat;
+            background-size: contain;
+            margin: 20px;
+            position: relative;
+            aspect-ratio: 1 / 1;
+
+            @media (min-width: 576px) {
+                width: 43%;
+
+            }
+        }
+
+
+        &__branding {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: -20px;
+
+            .es-kv__text {
+                text-transform: uppercase;
+                font-weight: $fw-fat;
+                font-size: 45px;
+                color: $color-black;
+                letter-spacing: 0.05em;
+                line-height: 1;
+                text-shadow: 4px 0px 0 $color-white;
+            }
+        }
+
+        &__logoCtn {
+            width: 50%;
+            margin: auto;
+            img {
+                margin: auto;
+            }
+        }
+
+        &__textCtn {
+            position: absolute;
+            top: 35%;
+            width: 100%;
+
+            .es-kv__text {
+                text-align: center;
+                color: $color-black;
+                font-size: 30px;
+                text-transform: uppercase;
+                font-weight: $fw-bold;
+                line-height: 1;
+            }
+
+
+        }
+
+
+
+        &__packshotCtn {
+            position: absolute;
+            // bottom: -29%;
+            top: 54%;
+            width:80%;
+            max-width:300px;
+            left: 50%;
+            transform: translate(-50%, 0);
+
+            @media (min-width: 576px) {
+                bottom: -28%;
+            }
+        }
+
+        &__packshot {
+            transition: all 200ms ease-in-out;
+
+            &:hover {
+                scale: 1.05;
+            }
+
+        }
+
+        @media (min-width: 576px) {
+            display: flex;
+            align-items: flex-end;
+            margin-top: 20px;
+            margin-bottom: 48px;
+        }
+    }
 }
