@@ -15,6 +15,44 @@ $color-accent-1: #93C01F; //green
 $color-accent-2: #F0DB3B; //yellow
 $color-cta: #D5421D; //ugly red-brownish for buttons
 
+$fs__body: clamp(0.875rem, 0.8rem + 0.4vw, 1rem); //14-16px
+$fs__heading--top: clamp(1.5625rem, 0.997rem + 2.8274vw, 2.75rem); // 320px-992px, 25-44px
+$fs__heading--bottom: clamp(1rem, 0.3452rem + 3.2738vw, 2.375rem); // 320px-992px, 16-38px
+
+$txt-stroke--main: -1px 1px 0 $color-main, 1px 1px 0 $color-main,
+    1px -1px 0 $color-main, -1px -1px 0 $color-main;
+
+// padding
+$padding--XS: 0.2rem;
+$padding--S: 0.5rem;
+$padding--M: 1rem;
+$padding--L: 2rem;
+$padding--XL: 3rem;
+$padding--XXL: 6rem;
+
+@mixin body($fw, $case, $color) {
+    font-family: $ff-main;
+    font-weight: $fw;
+    font-size: $fs__body;
+    text-transform: $case;
+    color: $color;
+}
+
+@mixin heading($fs, $color) {
+    font-family: $ff-main;
+    font-weight: $fw-bold;
+    text-transform: uppercase;
+    font-size: $fs;
+    color: $color;
+}
+
+@mixin border($color) {
+    border: 2px solid $color;
+    border-radius: 8px;
+    padding: $padding--L;
+    padding-bottom: $padding--XXL;
+}
+
 
 @mixin gradient-bg-text {
     background-image: linear-gradient(90deg, #257738 11.29%, #7AF178 85.48%);
@@ -23,9 +61,15 @@ $color-cta: #D5421D; //ugly red-brownish for buttons
     background-size: cover;
 }
 
+@mixin gradient-bg-text--orange {
+    background-image: linear-gradient(270deg, #FF7B2E 0%, #FFBD69 39.92%, #FF7B2E 60.29%, #FFBD69 81.47%, #FF7B2E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
+}
+
 @mixin gradient-bg-orange {
     background: linear-gradient(270deg, #FF7B2E 0%, #FFBD69 39.92%, #FF7B2E 60.29%, #FFBD69 81.47%, #FF7B2E 100%);
-
 }
 
 
@@ -50,20 +94,49 @@ $color-cta: #D5421D; //ugly red-brownish for buttons
         font-size: 0.6em;
     }
 
+    figure {
+        margin: 0;
+        padding: 0;
+    }
+
     font-family: $ff-main;
+    color: $color-black;
     overflow: hidden;
     max-width: 992px;
     margin: auto;
 
     .es-title {
         text-transform: uppercase;
-        font-weight: 800;
-        font-style: italic;
-        font-size: 32px;
+        font-weight: $fw-bold;
+        font-size: $fs__heading--top;
         line-height: 1;
         text-align: center;
         text-wrap: balance;
-        padding-block: 32px;
+        color: $color-main;
+        margin-bottom: $padding--S;
+    }
+
+    .es-subtitle {
+        text-transform: uppercase;
+        font-weight: $fw-bold;
+        font-size: $fs__heading--bottom;
+        line-height: 1;
+        text-align: center;
+        text-wrap: balance;
+        color: $color-white;
+        @include gradient-bg-orange();
+        padding: $padding--S;
+        transform: skewX(-30deg);
+        transform-origin: top;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+        box-shadow: 4px 4px 0 $color-accent-2;
+
+        span {
+            transform: skewX(30deg);
+        }
     }
 
     .es-line {
@@ -150,7 +223,7 @@ $color-cta: #D5421D; //ugly red-brownish for buttons
                 z-index: 1;
             }
 
-            
+
         }
 
         &__right {
@@ -250,8 +323,143 @@ $color-cta: #D5421D; //ugly red-brownish for buttons
             margin-top: 20px;
             margin-bottom: 48px;
         }
+
         @media (min-width: 768px) {
             margin-bottom: 58px;
+        }
+    }
+
+    .es-benefits {
+        padding: $padding--L;
+
+        &__header {
+            padding-inline: $padding--S;
+        }
+
+        &__borderWrapper {
+            border: 3px solid $color-accent-2;
+            margin-top: $padding--XXL;
+        }
+
+        &__iconsWrapper {
+            margin-top: -50px;
+            margin-bottom: 50px;
+            padding-inline: $padding--M;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $padding--L;
+
+            @media (min-width: 576px) and (max-width: 991px) {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                align-items: start;
+            }
+
+            @media (min-width: 992px) {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                align-items: start;
+            }
+        }
+
+        &__icon-single {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: $padding--S;
+            text-wrap: balance;
+
+            &--img {
+                aspect-ratio: 1/1;
+                width: 100px;
+                height: auto;
+            }
+
+            &--title {
+                font-size: $fs__body;
+                font-weight: $fw-bold;
+            }
+        }
+
+        &__productWrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            @media (min-width: 576px) {
+                flex-direction: row;
+                position: relative;
+                align-items: flex-start;
+
+                .es-subtitle {
+                    width: fit-content;
+                    padding-inline: 4rem;
+                }
+            }
+        }
+
+        &__packshotCtn {
+            max-width: 250px;
+            margin-top: $padding--M;
+
+            @media (min-width: 576px) {
+                margin-top: 0;
+            }
+        }
+
+        &__arrowCtn {
+            max-width: 130px;
+
+            @media (min-width: 576px) {
+                position: absolute;
+                top: 36%;
+                left: 40%;
+            }
+        }
+
+        &__featuresWrapper {
+            padding-inline: $padding--M;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $padding--S;
+            margin-bottom: -40px;
+
+            @media (min-width: 576px) {
+                padding-inline: $padding--L;
+                margin-bottom: -50px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                .es-benefits__featureSingle {
+                    display: inline-grid;
+                    place-items: center;
+                }
+                .es-benefits__featureSingle--3 {
+                    grid-row-start: 1;
+                    grid-row-end: 3;
+                    grid-column-start: 2;
+                }
+            }
+        }
+
+        &__featureSingle {
+            background-color: $color-accent-1;
+            border-radius: 20px;
+            text-align: center;
+            padding: $padding--M;
+            width: 100%;
+            height: 100%;
+        }
+
+        &__featureTitle {
+            color: $color-white;
+            text-transform: uppercase;
+            font-weight: $fw-bold;
+
         }
     }
 }
