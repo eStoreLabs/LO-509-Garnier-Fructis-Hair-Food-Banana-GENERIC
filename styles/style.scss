@@ -70,18 +70,6 @@ $color-cta: #D5421D; //ugly red-brownish for buttons
         height: 10px;
         background-color: $color-main;
         position: relative;
-
-        &--3 {
-            &:after {
-                @media (min-width: 576px) {
-                    z-index: 1;
-                }
-
-                @media (min-width: 768px) {
-                    right: -9%;
-                }
-            }
-        }
     }
 
     .es-gradient {
@@ -92,6 +80,7 @@ $color-cta: #D5421D; //ugly red-brownish for buttons
 
     .es-kv {
         margin-bottom: 70px;
+
         .es-line {
             margin-block: 16px;
 
@@ -121,7 +110,7 @@ $color-cta: #D5421D; //ugly red-brownish for buttons
                 text-align: center;
                 max-width: max-content;
                 margin: auto;
-                padding: 2px 4px;
+                padding: 0px 4px;
                 display: flex;
                 align-items: center;
                 white-space: nowrap;
@@ -140,8 +129,13 @@ $color-cta: #D5421D; //ugly red-brownish for buttons
                     margin-bottom: auto;
                 }
 
-                @media (min-width: 576px) {
-                    font-size: 25px;
+                @media (min-width: 576px) and (max-width: 767px) {
+                    font-size: 16px;
+                    left: 47%;
+                }
+
+                @media (min-width: 768px) {
+                    left: 45%;
                 }
             }
 
@@ -150,11 +144,13 @@ $color-cta: #D5421D; //ugly red-brownish for buttons
             }
 
             @media (min-width: 576px) {
-                width: 70%;
+                width: 65%;
                 margin-left: 32px;
                 margin-right: -48px;
                 z-index: 1;
             }
+
+            
         }
 
         &__right {
@@ -186,12 +182,17 @@ $color-cta: #D5421D; //ugly red-brownish for buttons
                 letter-spacing: 0.05em;
                 line-height: 1;
                 text-shadow: 4px 0px 0 $color-white;
+
+                @media (min-width: 576px) and (max-width: 767px) {
+                    font-size: 32px;
+                }
             }
         }
 
         &__logoCtn {
             width: 50%;
             margin: auto;
+
             img {
                 margin: auto;
             }
@@ -209,6 +210,10 @@ $color-cta: #D5421D; //ugly red-brownish for buttons
                 text-transform: uppercase;
                 font-weight: $fw-bold;
                 line-height: 1;
+
+                @media (min-width: 576px) and (max-width: 767px) {
+                    font-size: 20px;
+                }
             }
 
 
@@ -220,8 +225,8 @@ $color-cta: #D5421D; //ugly red-brownish for buttons
             position: absolute;
             // bottom: -29%;
             top: 54%;
-            width:80%;
-            max-width:300px;
+            width: 80%;
+            max-width: 300px;
             left: 50%;
             transform: translate(-50%, 0);
 
@@ -244,6 +249,9 @@ $color-cta: #D5421D; //ugly red-brownish for buttons
             align-items: flex-end;
             margin-top: 20px;
             margin-bottom: 48px;
+        }
+        @media (min-width: 768px) {
+            margin-bottom: 58px;
         }
     }
 }

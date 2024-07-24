@@ -39,16 +39,6 @@ body {
   background-color: #FCC558;
   position: relative;
 }
-@media (min-width: 576px) {
-  #es-garnier.es-garnier .es-line--3:after {
-    z-index: 1;
-  }
-}
-@media (min-width: 768px) {
-  #es-garnier.es-garnier .es-line--3:after {
-    right: -9%;
-  }
-}
 #es-garnier.es-garnier .es-gradient--green {
   background-image: linear-gradient(90deg, #257738 11.29%, #7AF178 85.48%);
   -webkit-background-clip: text;
@@ -84,7 +74,7 @@ body {
   max-width: -moz-max-content;
   max-width: max-content;
   margin: auto;
-  padding: 2px 4px;
+  padding: 0px 4px;
   display: flex;
   align-items: center;
   white-space: nowrap;
@@ -101,9 +91,15 @@ body {
   margin-top: 8px;
   margin-bottom: auto;
 }
-@media (min-width: 576px) {
+@media (min-width: 576px) and (max-width: 767px) {
   #es-garnier.es-garnier .es-kv__left--title {
-    font-size: 25px;
+    font-size: 16px;
+    left: 47%;
+  }
+}
+@media (min-width: 768px) {
+  #es-garnier.es-garnier .es-kv__left--title {
+    left: 45%;
   }
 }
 #es-garnier.es-garnier .es-kv__left--photoCtn {
@@ -111,7 +107,7 @@ body {
 }
 @media (min-width: 576px) {
   #es-garnier.es-garnier .es-kv__left {
-    width: 70%;
+    width: 65%;
     margin-left: 32px;
     margin-right: -48px;
     z-index: 1;
@@ -145,6 +141,11 @@ body {
   line-height: 1;
   text-shadow: 4px 0px 0 #FFFFFF;
 }
+@media (min-width: 576px) and (max-width: 767px) {
+  #es-garnier.es-garnier .es-kv__branding .es-kv__text {
+    font-size: 32px;
+  }
+}
 #es-garnier.es-garnier .es-kv__logoCtn {
   width: 50%;
   margin: auto;
@@ -164,6 +165,11 @@ body {
   text-transform: uppercase;
   font-weight: 700;
   line-height: 1;
+}
+@media (min-width: 576px) and (max-width: 767px) {
+  #es-garnier.es-garnier .es-kv__textCtn .es-kv__text {
+    font-size: 20px;
+  }
 }
 #es-garnier.es-garnier .es-kv__packshotCtn {
   position: absolute;
@@ -190,5 +196,10 @@ body {
     align-items: flex-end;
     margin-top: 20px;
     margin-bottom: 48px;
+  }
+}
+@media (min-width: 768px) {
+  #es-garnier.es-garnier .es-kv {
+    margin-bottom: 58px;
   }
 }/*# sourceMappingURL=style.css.map */
