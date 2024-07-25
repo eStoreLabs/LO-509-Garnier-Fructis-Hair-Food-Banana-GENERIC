@@ -786,6 +786,7 @@ $padding--XXL: 6rem;
                 position: relative;
                 padding-inline: 1rem;
                 padding-bottom: 0.5rem;
+
                 &:after {
                     position: absolute;
                     width: 100%;
@@ -819,6 +820,7 @@ $padding--XXL: 6rem;
                         &:hover {
                             scale: 1.1;
                         }
+
                         @media (min-width: 768px) {
                             margin-bottom: -20px;
                             max-width: 180px;
@@ -852,6 +854,7 @@ $padding--XXL: 6rem;
                         &:hover {
                             scale: 1.1;
                         }
+
                         @media (min-width: 768px) {
                             margin-bottom: -20px;
                             max-width: 180px;
@@ -951,6 +954,7 @@ $padding--XXL: 6rem;
                 place-items: center;
                 margin-block: 20px;
             }
+
             &__line {
                 @media (min-width: 768px) {
                     height: 100%;
@@ -963,11 +967,85 @@ $padding--XXL: 6rem;
                 }
             }
         }
+
         &__header {
             @media (min-width: 768px) {
                 padding-inline: $padding--XL;
                 margin-bottom: $padding--XL;
             }
+        }
+    }
+
+    .es-cross {
+        padding: $padding--XL;
+        text-align: center;
+
+
+        &__single {
+            margin-bottom: $padding--XL;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &:hover {
+                img {
+                    scale: 1.05;
+                    transition: all 200ms ease-in;
+                }
+
+                .es-cross__figcaption a {
+                    border: 2px solid $color-cta;
+                    background-color: $color-white;
+                    color: $color-cta;
+                }
+
+            }
+        }
+
+        &__img-container {
+            overflow: hidden;
+            max-width: 300px;
+            margin: auto;
+
+            img {
+                scale: 1.0;
+            }
+        }
+
+        &__figcaption {
+            color: $color-accent-1;
+
+            & a {
+                display: block;
+                max-width: 200px;
+                color: $color-white;
+                font-weight: $fw-bold;
+                text-decoration: none;
+                text-align: center;
+                background-color: $color-cta;
+                padding: 8px;
+                border-radius: $padding--XS;
+                margin: auto;
+                border: 2px solid $color-cta;
+                transition: all 200ms ease-in-out;
+
+                &:hover {
+                    border: 2px solid $color-cta;
+                    background-color: $color-white;
+                    color: $color-cta;
+                }
+            }
+        }
+
+
+        &__subtitle {
+            @include body($fw-bold, normalcase, inherit);
+            margin-bottom: $padding--M;
+        }
+
+        &__descr {
+            color: black;
+            margin-bottom: $padding--L;
         }
     }
 }
