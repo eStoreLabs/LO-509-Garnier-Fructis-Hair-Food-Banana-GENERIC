@@ -11,7 +11,7 @@ $fw-fat: 800;
 $color-white: #FFFFFF;
 $color-black: #28352B;
 $color-main: #FCC558; //banana orange
-$color-accent-1: #93C01F; //green
+$color-accent-1: #11622C; //green
 $color-accent-2: #F0DB3B; //yellow
 $color-cta: #D5421D; //ugly red-brownish for buttons
 
@@ -370,16 +370,26 @@ $padding--XXL: 6rem;
             text-align: center;
             gap: $padding--S;
             text-wrap: balance;
+            transform: all ease-in-out 200ms;
 
             &--img {
                 aspect-ratio: 1/1;
                 width: 100px;
                 height: auto;
+                transition: all 200ms ease-in-out;
             }
 
             &--title {
                 font-size: $fs__body;
                 font-weight: $fw-bold;
+            }
+
+            &:hover .es-benefits__icon-single--img {
+                scale: 1.05;
+            }
+
+            &:hover .es-benefits__icon-single--title {
+                scale: 1;
             }
         }
 
@@ -450,6 +460,7 @@ $padding--XXL: 6rem;
 
         &__featureSingle {
             background-color: $color-accent-1;
+            color: $color-white;
             border-radius: 20px;
             text-align: center;
             padding: $padding--M;
@@ -978,14 +989,47 @@ $padding--XXL: 6rem;
 
     .es-cross {
         padding: $padding--XL;
+        margin-top: $padding--XXL;
         text-align: center;
+        background-image: url("../images/cross_bg.png");
+        background-repeat: no-repeat;
+        background-size: 100% 18%;
 
+        @media (min-width: 850px) {
+            background-size: 100% 46%;
+        }
+
+        &__header {
+            .es-title {
+                color: $color-white;
+            }
+
+            .es-subtitle {
+                box-shadow: 4px 4px 0 $color-white;
+            }
+        }
+
+        &__wrapper--flex {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            @media (min-width: 850px) {
+                flex-direction: row;
+                align-items: flex-end;
+                gap: 16px;
+                justify-content: space-evenly;
+            }
+        }
 
         &__single {
             margin-bottom: $padding--XL;
             display: flex;
             flex-direction: column;
             align-items: center;
+            width: 90%;
+            max-width: 300px;
 
             &:hover {
                 img {
@@ -1003,12 +1047,12 @@ $padding--XXL: 6rem;
         }
 
         &__img-container {
-            overflow: hidden;
             max-width: 300px;
-            margin: auto;
+            max-height: 300px;
 
             img {
-                scale: 1.0;
+                max-width: 200px;
+                max-height: 300px;
             }
         }
 
@@ -1017,7 +1061,7 @@ $padding--XXL: 6rem;
 
             & a {
                 display: block;
-                max-width: 200px;
+                width: 100%;
                 color: $color-white;
                 font-weight: $fw-bold;
                 text-decoration: none;
@@ -1034,6 +1078,10 @@ $padding--XXL: 6rem;
                     background-color: $color-white;
                     color: $color-cta;
                 }
+
+                @media (min-width: 850px) {
+                    max-width: 200px;
+                }
             }
         }
 
@@ -1046,6 +1094,7 @@ $padding--XXL: 6rem;
         &__descr {
             color: black;
             margin-bottom: $padding--L;
+            text-wrap: balance;
         }
     }
 }
