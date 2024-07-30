@@ -4,6 +4,10 @@ body {
   padding: 0;
 }
 
+.slide-in-left {
+  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
 #es-garnier.es-garnier {
   font-family: "Montserrat", Tahoma, Verdana, sans-serif;
   color: #28352B;
@@ -313,6 +317,12 @@ body {
   #es-garnier.es-garnier .es-benefits__packshotCtn {
     margin-top: 0;
   }
+}
+#es-garnier.es-garnier .es-benefits__packshotCtn img {
+  transition: all 200ms ease-in-out;
+}
+#es-garnier.es-garnier .es-benefits__packshotCtn:hover img {
+  scale: 1.05;
 }
 #es-garnier.es-garnier .es-benefits__arrowCtn {
   max-width: 130px;
@@ -852,6 +862,9 @@ body {
 }
 #es-garnier.es-garnier .es-cross__header .es-subtitle {
   box-shadow: 4px 4px 0 #FFFFFF;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  padding-inline: 6rem;
 }
 #es-garnier.es-garnier .es-cross__wrapper--flex {
   display: flex;
@@ -931,4 +944,52 @@ body {
   color: black;
   margin-bottom: 2rem;
   text-wrap: balance;
+}
+#es-garnier.es-garnier .es-footer__text {
+  text-align: center;
+  font-size: 12px;
+}
+#es-garnier.es-garnier .es-footer__logoCtn {
+  margin-block: 1rem;
+}
+#es-garnier.es-garnier .es-footer__logoCtn img {
+  margin: auto;
+}
+@media (min-width: 576px) {
+  #es-garnier.es-garnier .es-footer__logoCtn {
+    margin-block: 2rem;
+  }
+}
+#es-garnier.es-garnier .es-footer__signs {
+  background: rgb(18, 88, 40);
+  background: linear-gradient(90deg, rgb(18, 88, 40) 0%, rgb(19, 111, 50) 20%, rgb(19, 116, 52) 50%, rgb(19, 112, 51) 80%, rgb(18, 91, 41) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+#es-garnier.es-garnier .es-footer__signs img {
+  max-width: 200px;
+}
+@media (min-width: 576px) {
+  #es-garnier.es-garnier .es-footer__signs img {
+    flex-basis: 33%;
+    max-width: 150px;
+  }
+}
+@media (min-width: 576px) {
+  #es-garnier.es-garnier .es-footer__signs {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 1rem;
+  }
+}
+@media (min-width: 576px) {
+  #es-garnier.es-garnier .es-footer__signs img:nth-of-type(3) {
+    max-width: 200px;
+    margin-top: -50px;
+    margin-right: -50px;
+  }
 }/*# sourceMappingURL=style.css.map */

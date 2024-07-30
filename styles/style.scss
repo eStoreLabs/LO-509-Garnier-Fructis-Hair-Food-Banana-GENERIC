@@ -72,7 +72,10 @@ $padding--XXL: 6rem;
     background: linear-gradient(270deg, #FF7B2E 0%, #FFBD69 39.92%, #FF7B2E 60.29%, #FFBD69 81.47%, #FF7B2E 100%);
 }
 
-
+.slide-in-left {
+    -webkit-animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
 
 #es-garnier.es-garnier {
     * {
@@ -417,6 +420,14 @@ $padding--XXL: 6rem;
 
             @media (min-width: 576px) {
                 margin-top: 0;
+            }
+
+            img {
+                transition: all 200ms ease-in-out;
+            }
+
+            &:hover img {
+                scale: 1.05;
             }
         }
 
@@ -1006,6 +1017,8 @@ $padding--XXL: 6rem;
 
             .es-subtitle {
                 box-shadow: 4px 4px 0 $color-white;
+                max-width: max-content;
+                padding-inline: $padding--XXL;
             }
         }
 
@@ -1097,4 +1110,62 @@ $padding--XXL: 6rem;
             text-wrap: balance;
         }
     }
+
+    .es-footer {
+        &__text {
+            text-align: center;
+            font-size: 12px;
+        }
+
+        &__logoCtn {
+            margin-block: $padding--M;
+
+            img {
+                margin: auto;
+            }
+
+            @media (min-width: 576px) {
+                margin-block: $padding--L;
+            }
+        }
+
+        &__signs {
+            background: rgb(18, 88, 40);
+            background: -moz-linear-gradient(90deg, rgba(18, 88, 40, 1) 0%, rgba(19, 111, 50, 1) 20%, rgba(19, 116, 52, 1) 50%, rgba(19, 112, 51, 1) 80%, rgba(18, 91, 41, 1) 100%);
+            background: -webkit-linear-gradient(90deg, rgba(18, 88, 40, 1) 0%, rgba(19, 111, 50, 1) 20%, rgba(19, 116, 52, 1) 50%, rgba(19, 112, 51, 1) 80%, rgba(18, 91, 41, 1) 100%);
+            background: linear-gradient(90deg, rgba(18, 88, 40, 1) 0%, rgba(19, 111, 50, 1) 20%, rgba(19, 116, 52, 1) 50%, rgba(19, 112, 51, 1) 80%, rgba(18, 91, 41, 1) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: $padding--L;
+            padding: $padding--L;
+
+            img {
+                max-width: 200px;
+
+                @media (min-width: 576px) {
+                    flex-basis: 33%;
+                    max-width: 150px;
+                }
+            }
+
+            @media (min-width: 576px) {
+                flex-direction: row;
+                align-items: flex-end;
+                justify-content: center;
+                padding: $padding--M;
+            }
+
+        }
+
+    }
+
+    @media (min-width: 576px) {
+        .es-footer__signs img:nth-of-type(3) {
+            max-width: 200px;
+            margin-top: -50px;
+            margin-right: -50px;
+        }
+    }
+
 }
